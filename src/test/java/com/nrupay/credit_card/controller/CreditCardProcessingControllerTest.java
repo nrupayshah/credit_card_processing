@@ -1,6 +1,5 @@
-package com.nrupay.credit_card;
+package com.nrupay.credit_card.controller;
 
-import com.nrupay.credit_card.controller.CreditCardController;
 import com.nrupay.credit_card.model.CreditCard;
 import com.nrupay.credit_card.services.CreditCardService;
 import org.junit.jupiter.api.DisplayName;

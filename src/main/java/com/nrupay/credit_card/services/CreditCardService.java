@@ -1,15 +1,23 @@
 package com.nrupay.credit_card.services;
 
 import com.nrupay.credit_card.model.CreditCard;
+import com.nrupay.credit_card.repositories.CreditCardRepository;
 
 import java.util.List;
 
 public class CreditCardService {
+
+    private final CreditCardRepository creditCardRepository;
+
+    public CreditCardService(CreditCardRepository creditCardRepository) {
+        this.creditCardRepository = creditCardRepository;
+    }
+
     public CreditCard saveCreditCardDetails(CreditCard creditCard) {
-        return null;
+        return creditCardRepository.save(creditCard);
     }
 
     public List<CreditCard> getAll() {
-        return null;
+        return creditCardRepository.findAll();
     }
 }

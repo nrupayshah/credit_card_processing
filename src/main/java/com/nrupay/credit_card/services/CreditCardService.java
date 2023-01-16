@@ -2,9 +2,11 @@ package com.nrupay.credit_card.services;
 
 import com.nrupay.credit_card.model.CreditCard;
 import com.nrupay.credit_card.repositories.CreditCardRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CreditCardService {
 
     private final CreditCardRepository creditCardRepository;

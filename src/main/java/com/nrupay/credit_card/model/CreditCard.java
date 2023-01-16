@@ -1,10 +1,7 @@
 package com.nrupay.credit_card.model;
 
 import com.nrupay.credit_card.util.CreditCardNumber;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Builder;
 import lombok.Data;
@@ -15,16 +12,20 @@ import lombok.Data;
 public class CreditCard {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private long id;
 
+    @Column
     @NotEmpty
     private String name;
 
+    @Column
     @CreditCardNumber
     private long number;
 
+    @Column
     private double limit;
 
+    @Column
     private long balance;
 }

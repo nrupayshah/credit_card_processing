@@ -9,6 +9,7 @@ import lombok.Data;
 @Data
 @Entity
 @Builder
+@Table
 public class CreditCard {
 
     @Id
@@ -23,7 +24,7 @@ public class CreditCard {
     @CreditCardNumber
     private long number;
 
-    @Column
+    @Column(name = "card_limit")
     private double limit;
 
     @Column

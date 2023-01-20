@@ -19,7 +19,6 @@ public class CustomResponseEntityExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
-//        Map<String, Object> body = new HashMap<>();
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach((error) ->{
 
@@ -27,8 +26,6 @@ public class CustomResponseEntityExceptionHandler {
             String message = error.getDefaultMessage();
             errors.put(fieldName, message);
         });
-
-        //body.put("error", ex.getAllErrors().stream().findFirst().get().field +":"+ ex.getAllErrors().stream().findFirst().get().getDefaultMessage());
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
 
